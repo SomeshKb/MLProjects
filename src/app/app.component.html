@@ -1,18 +1,28 @@
-<!-- <mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card> -->
+<!-- <mat-toolbar color="primary">
+  <span>Card view demo</span>
+  <button mat-button (click)="toggleGridColumns()" fxHide.lt-md>
+    <span *ngIf="gridColumns === 4">Three Columns</span>
+    <span *ngIf="gridColumns === 3">Four Columns</span>
+  </button>
+</mat-toolbar> -->
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div [fxFlex]="(100/4) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let num of [1,2,3,4,5,6,7]">
+      <mat-card class="mat-elevation-z4 card">
+        <mat-card-header>
+          <mat-card-title>Mountains {{num}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://st2.depositphotos.com/4317479/6466/i/450/depositphotos_64663851-stock-photo-man-standing-on-a-mountain.jpg">
+        <mat-card-content>
+          <p>
+            The Himalayas is a mountain range in Asia.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
