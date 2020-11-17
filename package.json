@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ngcc",
-    "deploy": "ng build --prod"
+    "deploy": "ng build --prod --output-path docs --base-href /MLProjects/   --deploy-url /MLProjects/"
   },
   "private": true,
   "dependencies": {
