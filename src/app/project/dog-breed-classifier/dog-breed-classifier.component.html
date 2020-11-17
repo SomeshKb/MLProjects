@@ -1,8 +1,12 @@
 <div class="container">
-  <mat-card >
-    <img mat-card-image src="https://st2.depositphotos.com/4317479/6466/i/450/depositphotos_64663851-stock-photo-man-standing-on-a-mountain.jpg">
+
+<h2  class="heading">Dog Breed Classifier</h2>
+<div class="card-container">
+  <mat-card class="card" >
+    <img mat-card-image [src]="url" class="image-preview">
     <mat-card-actions>
-      <input type="file" class="foo">
+      <input type="file" class="foo" (change)="onSelectFile($event)">
     </mat-card-actions>
   </mat-card>
+</div>
 </div>
