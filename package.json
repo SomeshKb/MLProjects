@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ngcc",
-    "deploy": "ng build --prod --output-path docs --base-href /MLProjects/   --deploy-url /MLProjects/ && npm run publish",
+    "deploy": "ng build --prod --output-path docs --base-href /MLProjects/  --deploy-url /MLProjects/ && npm run publish",
     "publish": "git add . && git commit -m 'deploy' && git push"
   },
   "private": true,
