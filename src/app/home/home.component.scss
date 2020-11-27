@@ -1,3 +1,24 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  height: 60vh;
+  justify-content: center;
+  text-align: center;
+}
+
+.description{
+  font-size: 30px;
+}
+
+.name {
+  padding: 20px;
+  font-size: 70px;
+}
+
+
+
 mat-toolbar {
   justify-content: space-between;
 }
@@ -17,5 +38,101 @@ mat-toolbar {
 
 .card:hover {
     transform: translate3D(0,-1px,0) scale(1.03);
-
 }
+
+
+
+@media (min-width: 1281px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  .name {
+    padding: 20px;
+    font-size: 70px;
+  }
+  .description{
+    font-size: 30px;
+  }
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .name {
+    padding: 20px;
+    font-size: 60px;
+  } 
+  .description{
+    font-size: 30px;
+  }
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  .name {
+    padding: 20px;
+    font-size: 50px;
+  }
+  .description{
+    font-size: 30px;
+  }
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  .name {
+    padding: 20px;
+    font-size: 40px;
+  }
+  .description{
+    font-size: 20px;
+  }
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .name {
+    padding: 20px;
+    font-size: 20px;
+    padding: 0px;
+  }
+  .description{
+    font-size: 15px;
+  }
+
+.profile {
+  height: 40vh;
+}
+}
+

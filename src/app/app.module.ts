@@ -8,12 +8,14 @@ import { MaterialModule } from './material/material.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AnimationTypingDirective } from './shared/directive/animation-typing.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    AnimationTypingDirective
   ],
   imports: [
     BrowserModule,

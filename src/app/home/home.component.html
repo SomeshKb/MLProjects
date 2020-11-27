@@ -1,27 +1,26 @@
-<!-- <mat-toolbar color="primary">
-  <span>Card view demo</span>
-  <button mat-button (click)="toggleGridColumns()" fxHide.lt-md>
-    <span *ngIf="gridColumns === 4">Three Columns</span>
-    <span *ngIf="gridColumns === 3">Four Columns</span>
-  </button>
-</mat-toolbar> -->
+
 <div class="content">
+
+  <mat-card class="profile">
+    <mat-card-content>
+    <h1 class="name">Somesh Kumar Bhaskar</h1>
+    <h3 appAnimationTyping class="description">I Code</h3>
+    </mat-card-content>
+  </mat-card>
+
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
       <div [fxFlex]="20 + '%'" fxFlex.xs="100%" fxFlex.sm="33%">
         <mat-card class="mat-elevation-z4 card" [routerLink]="['/project/dog-breed-classifier']" routerLinkActive="router-link-active" >
           <mat-card-header>
             <mat-card-title>Dog Breed Classifier</mat-card-title>
           </mat-card-header>
-          <img mat-card-image src="https://st2.depositphotos.com/4317479/6466/i/450/depositphotos_64663851-stock-photo-man-standing-on-a-mountain.jpg">
+          <img mat-card-image src="https://static.vecteezy.com/system/resources/previews/000/153/721/non_2x/dog-icon-set-vector.jpg">
           <mat-card-content>
             <p>
               The project is part of my Udacity Nanodegree
             </p>
           </mat-card-content>
-          <!-- <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions> -->
+
         </mat-card>
       </div>
     </div>
