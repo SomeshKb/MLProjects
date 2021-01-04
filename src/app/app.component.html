@@ -1,1 +1,4 @@
 <router-outlet></router-outlet>
+<div class="loader" *ngIf="loaderService.isShown()">
+    <img  src="assets/svg/loader.svg">
+</div>

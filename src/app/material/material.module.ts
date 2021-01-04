@@ -6,6 +6,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [],
@@ -17,6 +18,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatDividerModule,
     MatCardModule,
     MatToolbarModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     FlexLayoutModule,
@@ -25,6 +27,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatDividerModule,
     MatCardModule,
     MatToolbarModule,
+    MatProgressSpinnerModule
   ],
 })
 export class MaterialModule {}
