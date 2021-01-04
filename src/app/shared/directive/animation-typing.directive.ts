@@ -14,7 +14,6 @@ export class AnimationTypingDirective implements OnInit, OnChanges, AfterViewIni
 
     ngOnInit() {
         this.text = this.elRef.nativeElement.textContent;
-        console.log(this.text)
     }
 
     ngAfterViewInit() {
@@ -42,7 +41,6 @@ export class AnimationTypingDirective implements OnInit, OnChanges, AfterViewIni
     changeText() {
         this.elRef.nativeElement.textContent = this.elRef.nativeElement.textContent + this.text.slice(0, 1)
         this.text = this.text.slice(1);
-        console.log(this.text)
     }
 
 }

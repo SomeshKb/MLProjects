@@ -37,7 +37,6 @@ export class DogBreedClassifierComponent implements OnInit {
 
   getPrediction(file) {
     this.httpService.postFile(file).subscribe((res) => {
-      console.log(res);
       this.breedName = res.class_name;
     });
   }
