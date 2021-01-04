@@ -7,11 +7,21 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./dog-breed-classifier.component.scss'],
 })
 export class DogBreedClassifierComponent implements OnInit {
-  constructor(private httpService: HttpService) {}
 
-  url: any = 'assets/images/select-image.png';
-  ngOnInit(): void {}
   breedName = null;
+  url: any = 'assets/images/select-image.png';
+
+  constructor(private httpService: HttpService) {
+    this.pingModel();
+  }
+
+  ngOnInit(): void {}
+  
+  pingModel(){
+    this.httpService.pingModel().subscribe(res=>{
+    });
+  }
+  
   onSelectFile(event) {
     if (event.target.files && event.target.files[0]) {
       this.getPrediction(event.target.files[0]);

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { tap, finalize } from 'rxjs/operators';
 import { LoaderService } from './loader.service';
 
+export const InterceptorSkipHeader = 'X-Skip-Interceptor';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,11 @@ export class InterceptorService implements HttpInterceptor{
   
   intercept(req: HttpRequest<any>, next: HttpHandler):
   Observable<HttpEvent<any>> {
-    this.loaderService.show();
+    if(req.headers.has(InterceptorSkipHeader)){
+
+    } else {
+      this.loaderService.show();
+    }
   return next.handle(req).pipe(
     tap( (resp: any) => {
         return resp;
