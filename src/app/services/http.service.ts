@@ -10,7 +10,7 @@ export class HttpService {
   constructor(private httpClient:HttpClient) { }
 
   postFile(fileToUpload: File): Observable<any> {
-    const endpoint = 'http://127.0.0.1:5000/';
+    const endpoint = 'https://dog-breed-classifeir-flask.herokuapp.com/';
     const formData: FormData = new FormData();
     formData.append('file', fileToUpload);
     return this.httpClient.post(endpoint, formData)
