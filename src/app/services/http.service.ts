@@ -16,11 +16,15 @@ export class HttpService {
     return this.httpClient.post(endpoint, formData)
   }
 
-  pingModel() {
-    const endpoint = 'https://dog-breed-classifeir-flask.herokuapp.com/health';
+  pingModel(endpoint) {
     const headers = new HttpHeaders({'X-Skip-Interceptor':'skip'});
     return this.httpClient.get(endpoint,{
       headers:headers
     })
+  }
+
+
+  postData(endpoint, payloadData): Observable<any> {
+    return this.httpClient.post(endpoint, payloadData)
   }
 }

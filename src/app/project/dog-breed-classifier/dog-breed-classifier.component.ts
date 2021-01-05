@@ -18,7 +18,8 @@ export class DogBreedClassifierComponent implements OnInit {
   ngOnInit(): void {}
   
   pingModel(){
-    this.httpService.pingModel().subscribe(res=>{
+    const endpoint = 'https://dog-breed-classifeir-flask.herokuapp.com/health';
+    this.httpService.pingModel(endpoint).subscribe(res=>{
     });
   }
   

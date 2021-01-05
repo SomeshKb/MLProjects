@@ -11,7 +11,7 @@
     flex-flow: column;
     
   }
-.foo {
+.custom-button {
     display: block;
     position: relative;
     width: 300px;
@@ -22,10 +22,10 @@
     border-radius: 5px;
     outline: 0;
 }
-.foo:hover:after {
+.custom-button:hover:after {
     background: #5978f8;
 }
-.foo:after {
+.custom-button:after {
     transition: 200ms all ease;
     border-bottom: 3px solid rgba(0,0,0,.2);
     background: #3c5ff4;
