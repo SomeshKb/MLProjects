@@ -11,10 +11,29 @@ export class CarMileageComponent implements OnInit {
   inputForm: FormGroup = null;
 
   originCountry = [
-    { value: 1, label: 'India' },
-    { value: 2, label: 'USA' },
-    { value: 3, label: 'Germany' },
+    { value: 1, label: 'USA' },
+    { value: 2, label: 'Germany' },
+    { value: 3, label: 'Japan' },
   ];
+
+  years = [
+    { value: 70, label: 1970 },
+    { value: 71, label: 1971 },
+    { value: 72, label: 1972 },
+    { value: 73, label: 1973 },
+    { value: 74, label: 1974 },
+    { value: 75, label: 1975 },
+    { value: 76, label: 1976 },
+    { value: 77, label: 1977 },
+    { value: 78, label: 1978 },
+    { value: 79, label: 1979 },
+    { value: 80, label: 1980 },
+    { value: 81, label: 1981 },
+    { value: 82, label: 1982 },
+  ];
+
+  cylinders = [3, 4, 5, 6, 8];
+  
   constructor(
     private formBuilder: FormBuilder,
     private httpService: HttpService
@@ -28,19 +47,18 @@ export class CarMileageComponent implements OnInit {
   createForm() {
     this.inputForm = this.formBuilder.group({
       Cylinders: ['', [Validators.required]],
-      Displacement: ['', [Validators.required]],
-      Horsepower: ['', [Validators.required]],
-      Weight: ['', [Validators.required]],
-      Acceleration: ['', [Validators.required]],
+      Displacement: ['', [Validators.required,,Validators.min(0.1)]],
+      Horsepower: ['', [Validators.required,Validators.min(0.1)]],
+      Weight: ['', [Validators.required,Validators.min(0.1)]],
+      Acceleration: ['', [Validators.required,Validators.min(0.1)]],
       Model_Year: ['', [Validators.required]],
       Origin: ['', [Validators.required]],
     });
   }
 
-  checkModelHealth(){
+  checkModelHealth() {
     const endpoint = 'https://blooming-stream-22306.herokuapp.com/health';
-    this.httpService.pingModel(endpoint).subscribe(res=>{
-    });
+    this.httpService.pingModel(endpoint).subscribe((res) => {});
   }
 
   submit() {
@@ -56,7 +74,7 @@ export class CarMileageComponent implements OnInit {
       console.log(payloadBody);
       const endPoint = 'https://blooming-stream-22306.herokuapp.com/predict';
 
-      this.httpService.postData(endPoint, [payloadBody]).subscribe((res) => {
+      this.httpService.postData(endPoint, payloadBody).subscribe((res) => {
         console.log();
       });
     }

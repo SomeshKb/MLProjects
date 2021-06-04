@@ -5,35 +5,55 @@
       <mat-card  >
           <div class="card">
         <mat-form-field appearance="fill">
-            <mat-label>Enter Cylinders </mat-label>
-            <input matInput [formControl]="this.inputForm.controls.Cylinders" required autocomplete="off">
-            <mat-error *ngIf="this.inputForm.controls.Cylinders.invalid">Required</mat-error>
+            <mat-label>Select Cylinders </mat-label>
+            <mat-select [formControl]="this.inputForm.controls.Cylinders" >
+                <mat-option *ngFor="let cylinder of cylinders" [value]="cylinder" >
+                  {{cylinder}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="this.inputForm.controls.Cylinders.invalid">Invalid Value</mat-error>
           </mat-form-field>
+
           <mat-form-field appearance="fill">
-            <mat-label>Enter Displacement  </mat-label>
-            <input matInput [formControl]="this.inputForm.controls.Displacement" required autocomplete="off">
-            <mat-error *ngIf="this.inputForm.controls.Displacement.invalid">Required</mat-error>
+            <mat-label>Enter Engine Displacement in cublic inch </mat-label>
+            <input matInput type="number" [formControl]="this.inputForm.controls.Displacement" required autocomplete="off">
+            <!-- <mat-icon matSuffix [inline]="true">info</mat-icon> -->
+            <mat-error *ngIf="this.inputForm.controls.Displacement.invalid">Invalid Value</mat-error>
           </mat-form-field>
+
+          
           <mat-form-field appearance="fill">
             <mat-label>Enter Horsepower </mat-label>
-            <input matInput [formControl]="this.inputForm.controls.Horsepower" required autocomplete="off">
-            <mat-error *ngIf="this.inputForm.controls.Horsepower.invalid">Required</mat-error>
+            <input matInput type="number" [formControl]="this.inputForm.controls.Horsepower" required autocomplete="off">
+            <!-- <mat-icon matSuffix [inline]="true">info</mat-icon> -->
+            <mat-error *ngIf="this.inputForm.controls.Horsepower.invalid">Invalid Value</mat-error>
           </mat-form-field>
+
           <mat-form-field appearance="fill">
-            <mat-label>Enter Weight  </mat-label>
-            <input matInput [formControl]="this.inputForm.controls.Weight" required autocomplete="off">
-            <mat-error *ngIf="this.inputForm.controls.Weight.invalid">Required</mat-error>
+            <mat-label>Enter Weight in lbs </mat-label>
+            <input matInput type="number" [formControl]="this.inputForm.controls.Weight" required autocomplete="off">
+            <!-- <mat-icon matSuffix [inline]="true">info</mat-icon> -->
+            <mat-error *ngIf="this.inputForm.controls.Weight.invalid">Invalid Value</mat-error>
           </mat-form-field>
+
           <mat-form-field appearance="fill">
-            <mat-label>Enter Acceleration </mat-label>
-            <input matInput [formControl]="this.inputForm.controls.Acceleration" required autocomplete="off">
-            <mat-error *ngIf="this.inputForm.controls.Acceleration.invalid">Required</mat-error>
+            <mat-label>Enter Acceleration</mat-label>
+            <input matInput type="number" [formControl]="this.inputForm.controls.Acceleration" required autocomplete="off">
+            <!-- <mat-icon matSuffix [inline]="true">info</mat-icon> -->
+            <mat-error *ngIf="this.inputForm.controls.Acceleration.invalid">Invalid Value</mat-error>
           </mat-form-field>
+
           <mat-form-field appearance="fill">
-            <mat-label>Enter Model Year </mat-label>
-            <input matInput [formControl]="this.inputForm.controls.Model_Year" required autocomplete="off">
-            <mat-error *ngIf="this.inputForm.controls.Model_Year.invalid">Required</mat-error>
+            <mat-label>Select Model Year </mat-label>
+            <!-- <input matInput type="number" [formControl]="this.inputForm.controls.Model_Year" required autocomplete="off"> -->
+            <mat-select [formControl]="this.inputForm.controls.Model_Year" >
+                <mat-option *ngFor="let year of years" [value]="year.value" >
+                  {{year.label}}
+                </mat-option>
+              </mat-select>
+            <mat-error *ngIf="this.inputForm.controls.Model_Year.invalid">Invalid Value</mat-error>
           </mat-form-field>
+
           <mat-form-field appearance="fill">
             <mat-label>Select Origin Country </mat-label>
             <mat-select [formControl]="this.inputForm.controls.Origin" >
@@ -41,7 +61,7 @@
                   {{origin.label}}
                 </mat-option>
               </mat-select>
-            <mat-error *ngIf="this.inputForm.controls.Origin.invalid">Required</mat-error>
+            <mat-error *ngIf="this.inputForm.controls.Origin.invalid">Invalid Value</mat-error>
           </mat-form-field>
           </div>
               <mat-card-actions class="button-wrapper">
